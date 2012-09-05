@@ -1,0 +1,18 @@
+[31mF[0m
+
+Failures:
+
+  1) Static pages Home page should have the content 'Sample App'
+     [31mFailure/Error:[0m [31mpage.should have_content('Sample App')[0m
+       [31mexpected there to be content "Sample App" in "SampleApp\n\nStaticPages#home\nFind me in app/views/static_pages/home.html.erb\n\n\n"[0m
+[36m     # ./spec/requests/static_pages_spec.rb:9:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 4.02 seconds
+[31m1 example, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/requests/static_pages_spec.rb:7[0m [36m# Static pages Home page should have the content 'Sample App'[0m
+
+Randomized with seed 39713
+
