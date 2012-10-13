@@ -27,7 +27,9 @@ class User < ActiveRecord::Base
   has_attached_file :avatar,
                :path => ":rails_root/public/system/users/avatars/:id/:style/:filename",
                :url => "/system/users/avatars/:id/:style/:filename", 
-               :styles => { :medium => "300x300>", :thumb => "100x100>" }
+               :styles => { :medium => "300x300>", :thumb => "100x100>" },
+               default_url: "/system/users/avatars/default/rails.png",
+               default_path: ":rails_root/public/system/users/avatars/default/rails.png"
 
   # User.new.avatar_url(:small) # => "/images/default_small_avatar.png"
 
