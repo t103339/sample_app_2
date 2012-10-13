@@ -1,5 +1,8 @@
 require 'spec_helper'
 
+#include ActionDispatch::TestProcess
+require 'action_dispatch/testing/test_process'
+
 describe ApplicationHelper do
 
 	it "should include the page title" do

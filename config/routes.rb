@@ -1,8 +1,23 @@
 SampleApp::Application.routes.draw do
 
-  root               to: 'static_pages#home'
+  # Enable Rails REST-style URI's for users
+  # HTTP    URI         Action      Named            Purpose
+  # request                         route
+  # GET   /users        index   users_path page   to list all users
+  # GET   /users/1      show    user_path(user)   page to show user
+  # GET   /users/new    new     new_user_path     page to make a new user (signup)
+  # POST  /users        create  users_path        create a new user
+  # GET   /users/1/edit edit    edit_user_path(user) page to edit user with id 1
+  # PUT   /users/1      update  user_path(user)   update user
+  # DELETE /users/1     destroy user_path(user)   delete user
+  resources         :users
 
-  match '/signup',   to: 'Users#new'
+  # Following not needed because above command sets up all of the
+  #    above REST routes
+  # match '/signup',   to: 'users#new'
+
+  # Define page paths
+  root               to: 'static_pages#home'
 
   match '/help',     to: 'static_pages#help'
   match '/about',    to: 'static_pages#about'
