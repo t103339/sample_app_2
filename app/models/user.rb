@@ -46,8 +46,9 @@ class User < ActiveRecord::Base
                       uniqueness: {case_sensitive: false},
                       format: { with: VALID_EMAIL_REGEX }
 
-	validates :password,   presence: true,
-                         length: { minimum: 6 }
+  # Removed presence: true because password digest is checked and renamed to password
+  # in the en.yml file.
+	validates :password, length: { minimum: 6 }
 
 	validates :password_confirmation, presence: true 
 
